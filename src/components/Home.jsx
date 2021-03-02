@@ -4,7 +4,9 @@ import NodeRequest from './NodeRequest.jsx'
 const Home = () => {
     return ( 
         <Fragment>
-            <h1 className="title">BFT</h1>
+            <center>
+                <h1 className="title">BFT</h1>
+            </center>
             <NodeRequest
                 server_name='AMAZON'
                 server_provider='iota.bft.digital'

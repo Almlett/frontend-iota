@@ -2,24 +2,27 @@ body{
     background-color: #d1d1d1;
 }
 .title{
-    
+    margin:4rem;
 }
 .node{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    
     margin:1rem;
     padding: 1rem;
     background-color: white;
     border-radius:16px;
-    box-shadow:  5px 5px 27px #e1e1e3, -5px -5px 27px #ffffff;
+    padding-bottom: 4rem;
 }
 
 .node__header{
     display: flex;
     flex-direction: row;
     align-self: center;
+}
+
+.error{
+    color:red;
 }
 
 .node__provider{
@@ -64,12 +67,19 @@ body{
 .node__form-submit:hover{
     background-color: #326ac2;
     cursor:pointer;
-    
+}
+
+.node__form-submit:disabled{
+    background-color: #ddd;
+    border: 2px solid #ddd;
+    color:black;
+    cursor:default;
 }
 
 .node__form-table{
     display: flex;
     margin: 1rem 2rem;
+    
 }
 .node__form-hash-list{
     border-collapse: collapse;

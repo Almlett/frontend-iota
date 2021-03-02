@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MesageList from './MesageList.jsx';
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
 const NodeRequest = ({server_name, server_provider, address, seed}) => {
     const Iota = require('@iota/core');
@@ -9,6 +10,7 @@ const NodeRequest = ({server_name, server_provider, address, seed}) => {
     const minimumWeightMagnitude = 14;
     
     const [message, setMessage] = useState("")
+    const [error, setError] = useState(0)
     const [sending, setSending] = useState(false)
     const [sent_messages, setSentMessages] = useState([])
 
@@ -47,6 +49,7 @@ const NodeRequest = ({server_name, server_provider, address, seed}) => {
         })
         .catch(err => {
             setSending(false);
+            setError(error + 1)
             console.error(err)
         });
     }
@@ -57,8 +60,21 @@ const NodeRequest = ({server_name, server_provider, address, seed}) => {
     return ( 
         <div className="node">
             <div className="node__header">
-                <h2 className="node__header-title">{server_name}</h2>
-                <a className="node__header-provider" href={`http://${server_provider}/`} target="_blank">(https://{server_provider}/)</a>
+                <h2 className="node__header-title">{server_name}
+                    <b className="error">
+                        {
+                            error > 0 &&
+                            `(${error})`
+                            
+                        }
+                    </b>
+                </h2> 
+                <a 
+                    className="node__header-provider"
+                    href={`http://${server_provider}/`}
+                    target="_blank">
+                        <OpenInNewIcon />
+                </a>
             </div>
             <form
                     className="node__form"
@@ -80,7 +96,7 @@ const NodeRequest = ({server_name, server_provider, address, seed}) => {
                         value={sending ? "Sending...":"Send message"}
                     />
             </form>
-
+          
             <MesageList 
                 messages={sent_messages}
             />
