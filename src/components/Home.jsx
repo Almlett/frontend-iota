@@ -72,7 +72,7 @@ const Home = () => {
                     <input 
                         className="node__form-input"
                         type="text"
-                        placeholder="Provider"
+                        placeholder="Provider (AAA.AAA.AAA.AAA or DNS)"
                         name="provider"
                         required={true}
                         value={provider}
