@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+body{
+    background-color: #d1d1d1;
+}
+.title{
+    
+}
+.node{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    margin:1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius:16px;
+    box-shadow:  5px 5px 27px #e1e1e3, -5px -5px 27px #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.node__header{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.node__provider{
+
+}
+
+.node__form{
+    margin: 1rem;
+    display: flex;
+    margin:0 2rem;
+}
+.node__form-input{
+    font-size: 20px;
+    flex-grow: 1;
+    margin-right:1rem ;
+    padding: 0 2rem;
+}
+.node__form-submit{
+    font-size: 20px;
+    
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.node__form-submit:hover {
+    background-color: #008CBA;
+    color: white;
   }
+  
+
+.node__form-submit:hover{
+    background-color: #326ac2;
+    cursor:pointer;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.node__form-table{
+    display: flex;
+    margin: 1rem 2rem;
+}
+.node__form-hash-list{
+    border-collapse: collapse;
+    flex-grow:1;
+    
+}
+  
+.node__form-hash-list tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 
-.App-link {
-  color: #61dafb;
+.node__form-hash-list tr:hover {
+    background-color: #ddd;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.node__form-hash-list th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #008CBA;
+    color: white;
 }
