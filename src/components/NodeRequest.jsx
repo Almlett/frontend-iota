@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MesageList from './MesageList.jsx';
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 
-const NodeRequest = ({server_name, server_provider, address, seed}) => {
+const NodeRequest = ({type, server_name, server_provider, address, seed}) => {
     const Iota = require('@iota/core');
     const Converter = require('@iota/converter');
     
@@ -60,7 +60,14 @@ const NodeRequest = ({server_name, server_provider, address, seed}) => {
     return ( 
         <div className="node">
             <div className="node__header">
-                <h2 className="node__header-title">{server_name}
+                <h2 className="node__header-title">
+                    <b className="temp">
+                        {
+                            type=="temp" &&
+                            "(temporary)"
+                        }
+                    </b>
+                    {server_name}
                     <b className="error">
                         {
                             error > 0 &&
